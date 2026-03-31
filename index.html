@@ -3,6 +3,8 @@
 <head>
     <title>Comparador de Lenguajes</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 </head>
 <body>
 
@@ -16,9 +18,15 @@
     <button onclick="mostrar('kotlin')">📱 Kotlin</button>
 </div>
 
-<pre id="resultado">Selecciona un lenguaje...</pre>
+<pre><code id="codigo"></code></pre>
+
+<h3>🖥️ Resultado:</h3>
+<pre id="resultado"></pre>
+
+<h3>🧠 Explicación:</h3>
+<p id="explicacion"></p>
 
 <script src="app.js"></script>
-
+<script>hljs.highlightAll();</script>
 </body>
 </html>
