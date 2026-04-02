@@ -98,12 +98,13 @@ fun main() {
   }
 
   // 🔥 Mostrar código
-  document.getElementById("codigo").textContent = codigo;
-  hljs.highlightAll();
+  let bloque = document.getElementById("codigo");
+  bloque.textContent = codigo;
+  bloque.className = "language-" + lenguaje;
+  hljs.highlightElement(bloque);
 
   // 🔵 Mostrar resultado
-  let lista = document.getElementById("salidaReal");
-  lista.textContent = datos.join("\n");
+  document.getElementById("salidaReal").textContent = datos.join("\n");
 
   // 🧠 Explicación
   document.getElementById("explicacion").textContent = explicacion;
@@ -113,4 +114,15 @@ fun main() {
 // 🚀 Cargar automáticamente
 document.addEventListener("DOMContentLoaded", () => {
   mostrar("python");
+
+  // 🔥 detectar cuando el usuario escribe (SOLO UNA VEZ)
+  document.getElementById("codigo").addEventListener("input", () => {
+    hljs.highlightElement(document.getElementById("codigo"));
+  });
 });
+
+
+// 🧹 limpiar código
+function limpiarCodigo() {
+  document.getElementById("codigo").textContent = "";
+}
