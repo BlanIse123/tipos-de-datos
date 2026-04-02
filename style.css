@@ -1,56 +1,11 @@
-body {
-  background: #1e1e2f;
-  color: white;
-  font-family: Arial;
-  text-align: center;
-}
-
-h1 {
-  margin-bottom: 20px;
-}
-
-.botones button {
-  background: orange;
-  border: none;
-  padding: 10px 15px;
-  margin: 5px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.botones button:hover {
-  background: #ff9900;
-}
-
-pre {
-  background: black;
-  color: #00ffcc;
-  padding: 20px;
-  border-radius: 10px;
-  width: 80%;
-  margin: auto;
-  text-align: left;
-}
-
 #resultado {
   list-style: none;
   padding: 0;
-  width: 50%;
-  margin: auto;
 }
 
 #resultado li {
-  background: #ffffff;
+  background: #111;
   margin: 5px;
   padding: 10px;
   border-radius: 8px;
-}
-
-#explicacion {
-  background: #ffffff;
-  padding: 15px;
-  margin: 10px auto;
-  width: 60%;
-  border-radius: 10px;
 }
