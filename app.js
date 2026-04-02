@@ -1,72 +1,55 @@
-function mostrar(lenguaje) {
+async function mostrar(lenguaje) {
 
-    let codigo = "";
-    let resultado = "";
-    let explicacion = "";
+  let ruta = "";
+  let explicacion = "";
+  let datos = [];
 
-    if (lenguaje === "python") {
-        codigo = `
-nombre = "Blanca"
-edad = 20
-print(nombre)
-        `;
-        resultado = `
-Blanca
-20
-        `;
-        explicacion = "Python no necesita declarar tipos, todo es dinámico.";
-    }
+  if (lenguaje === "python") {
+    ruta = "python/persona.py";
+    explicacion = "Python detecta automáticamente los tipos.";
+    datos = ["Nombre: Blanca", "Edad: 20", "Altura: 1.65", "Estudiante: True"];
+  }
 
-    else if (lenguaje === "java") {
-        codigo = `
-String nombre = "Blanca";
-System.out.println(nombre);
-        `;
-        resultado = `
-Blanca
-        `;
-        explicacion = "Java requiere declarar el tipo de dato antes de usarlo.";
-    }
+  else if (lenguaje === "java") {
+    ruta = "java/Persona.java";
+    explicacion = "Java usa tipos de datos obligatorios.";
+    datos = ["Nombre: Blanca", "Edad: 20", "Altura: 1.65", "Estudiante: true"];
+  }
 
-    else if (lenguaje === "javascript") {
-        codigo = `
-let nombre = "Blanca";
-console.log(nombre);
-        `;
-        resultado = `
-Blanca
-        `;
-        explicacion = "JavaScript es dinámico como Python, pero se usa mucho en web.";
-    }
+  else if (lenguaje === "javascript") {
+    ruta = "javascript/persona.js";
+    explicacion = "JavaScript usa let.";
+    datos = ["Nombre: Blanca", "Edad: 20", "Altura: 1.65", "Estudiante: true"];
+  }
 
-    else if (lenguaje === "cpp") {
-        codigo = `
-string nombre = "Blanca";
-cout << nombre;
-        `;
-        resultado = `
-Blanca
-        `;
-        explicacion = "C++ es rápido y requiere tipos definidos.";
-    }
+  else if (lenguaje === "cpp") {
+    ruta = "cpp/persona.cpp";
+    explicacion = "C++ usa cout y muestra true como 1.";
+    datos = ["Nombre: Blanca", "Edad: 20", "Altura: 1.65", "Estudiante: 1"];
+  }
 
-    else if (lenguaje === "kotlin") {
-        codigo = `
-val nombre: String = "Blanca"
-println(nombre)
-        `;
-        resultado = `
-Blanca
-        `;
-        explicacion = "Kotlin combina tipado fuerte con sintaxis moderna.";
-    }
+  else if (lenguaje === "kotlin") {
+    ruta = "kotlin/Persona.kt";
+    explicacion = "Kotlin usa val.";
+    datos = ["Nombre: Blanca", "Edad: 20", "Altura: 1.65", "Estudiante: true"];
+  }
 
-    document.getElementById("codigo").textContent = codigo;
-    document.getElementById("resultado").textContent = resultado;
-    document.getElementById("explicacion").textContent = explicacion;
+  // 🔥 Cargar archivo real
+  let respuesta = await fetch(ruta);
+  let codigo = await respuesta.text();
 
-    // aplicar colores
-    document.querySelectorAll('pre code').forEach((el) => {
-        hljs.highlightElement(el);
-    });
+  document.getElementById("codigo").textContent = codigo;
+
+  // 🔵 Mostrar lista
+  let lista = document.getElementById("resultado");
+  lista.innerHTML = "";
+
+  datos.forEach(item => {
+    let li = document.createElement("li");
+    li.textContent = item;
+    lista.appendChild(li);
+  });
+
+  // 🧠 Explicación
+  document.getElementById("explicacion").textContent = explicacion;
 }

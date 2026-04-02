@@ -1,14 +1,13 @@
-
 public class Persona {
     public static void main(String[] args) {
         String nombre = "Blanca";
         int edad = 20;
         double altura = 1.65;
-        boolean esEstudiante = true;
+        boolean estudiante = true;
 
         System.out.println("Nombre: " + nombre);
         System.out.println("Edad: " + edad);
         System.out.println("Altura: " + altura);
-        System.out.println("¿Es estudiante? " + esEstudiante);
+        System.out.println("Estudiante: " + estudiante);
     }
 }

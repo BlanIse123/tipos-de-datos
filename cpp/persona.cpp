@@ -5,12 +5,12 @@ int main() {
     string nombre = "Blanca";
     int edad = 20;
     float altura = 1.65;
-    bool esEstudiante = true;
+    bool estudiante = true;
 
     cout << "Nombre: " << nombre << endl;
     cout << "Edad: " << edad << endl;
     cout << "Altura: " << altura << endl;
-    cout << "¿Es estudiante? " << esEstudiante << endl;
+    cout << "Estudiante: " << estudiante << endl;
 
     return 0;
 }

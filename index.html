@@ -1,38 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Comparador de Lenguajes</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Highlight.js -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-
+  <meta charset="UTF-8">
+  <title>Comparador de Lenguajes</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<h1>💻 Comparador de Tipos de Datos</h1>
+<h1>💻 Comparador de Lenguajes</h1>
 
 <div class="botones">
-    <button onclick="mostrar('python')">🐍 Python</button>
-    <button onclick="mostrar('java')">☕ Java</button>
-    <button onclick="mostrar('javascript')">⚡ JavaScript</button>
-    <button onclick="mostrar('cpp')">💻 C++</button>
-    <button onclick="mostrar('kotlin')">📱 Kotlin</button>
+  <button onclick="mostrar('python')">🐍 Python</button>
+  <button onclick="mostrar('java')">☕ Java</button>
+  <button onclick="mostrar('javascript')">⚡ JavaScript</button>
+  <button onclick="mostrar('cpp')">💻 C++</button>
+  <button onclick="mostrar('kotlin')">📱 Kotlin</button>
 </div>
 
-<pre><code id="codigo"></code></pre>
+<h3>📄 Código:</h3>
+<pre id="codigo">Haz clic en un lenguaje...</pre>
 
 <h3>🔵 Resultado real:</h3>
-<pre id="salidaReal"></pre>
+<ul id="resultado"></ul>
 
 <h3>🧠 Explicación:</h3>
-<p id="explicacion"></p>
+<div id="explicacion"></div>
 
 <script src="app.js"></script>
-
 
 </body>
 </html>
