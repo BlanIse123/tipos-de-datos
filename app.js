@@ -10,26 +10,46 @@ async function mostrar(lenguaje) {
     datos = ["Nombre: Blanca", "Edad: 20", "Altura: 1.65", "Estudiante: True"];
   }
 
-  // ... (los demás igual)
-
-  // 🔥 Cargar archivo real
-  try {
-    let respuesta = await fetch(ruta);
-    let codigo = await respuesta.text();
-    document.getElementById("codigo").textContent = codigo;
-  } catch (error) {
-    document.getElementById("codigo").textContent = "Error al cargar el archivo";
+  else if (lenguaje === "java") {
+    ruta = "Java/Persona.java";
+    explicacion = "Java usa tipos de datos obligatorios.";
+    datos = ["Nombre: Blanca", "Edad: 20", "Altura: 1.65", "Estudiante: true"];
   }
 
-  // 🔵 Lista
-  let lista = document.getElementById("resultado");
-  lista.innerHTML = "";
+  else if (lenguaje === "javascript") {
+    ruta = "JavaScript/persona.js";
+    explicacion = "JavaScript usa let.";
+    datos = ["Nombre: Blanca", "Edad: 20", "Altura: 1.65", "Estudiante: true"];
+  }
 
-  datos.forEach(item => {
-    let li = document.createElement("li");
-    li.textContent = item;
-    lista.appendChild(li);
-  });
+  else if (lenguaje === "cpp") {
+    ruta = "CPP/persona.cpp";
+    explicacion = "C++ usa cout y muestra true como 1.";
+    datos = ["Nombre: Blanca", "Edad: 20", "Altura: 1.65", "Estudiante: 1"];
+  }
 
+  else if (lenguaje === "kotlin") {
+    ruta = "Kotlin/Persona.kt";
+    explicacion = "Kotlin usa val.";
+    datos = ["Nombre: Blanca", "Edad: 20", "Altura: 1.65", "Estudiante: true"];
+  }
+
+  // 🔥 Cargar archivo real
+  let respuesta = await fetch(ruta);
+  let codigo = await respuesta.text();
+
+  document.getElementById("codigo").textContent = codigo;
+
+  // 🔵 Mostrar resultado
+  let lista = document.getElementById("salidaReal");
+  lista.textContent = datos.join("\n");
+
+  // 🧠 Explicación
   document.getElementById("explicacion").textContent = explicacion;
 }
+
+
+// ✅ ESTO VA AFUERA (AL FINAL)
+document.addEventListener("DOMContentLoaded", () => {
+  mostrar("python");
+});
