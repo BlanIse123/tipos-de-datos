@@ -5,31 +5,31 @@ async function mostrar(lenguaje) {
   let datos = [];
 
   if (lenguaje === "python") {
-    ruta = "Python/persona.py";
+    ruta = "python/persona.py";
     explicacion = "Python detecta automáticamente los tipos.";
     datos = ["Nombre: Blanca", "Edad: 20", "Altura: 1.65", "Estudiante: True"];
   }
 
   else if (lenguaje === "java") {
-    ruta = "Java/Persona.java";
+    ruta = "java/Persona.java";
     explicacion = "Java usa tipos de datos obligatorios.";
     datos = ["Nombre: Blanca", "Edad: 20", "Altura: 1.65", "Estudiante: true"];
   }
 
   else if (lenguaje === "javascript") {
-    ruta = "JavaScript/persona.js";
+    ruta = "javascript/persona.js";
     explicacion = "JavaScript usa let.";
     datos = ["Nombre: Blanca", "Edad: 20", "Altura: 1.65", "Estudiante: true"];
   }
 
   else if (lenguaje === "cpp") {
-    ruta = "CPP/persona.cpp";
+    ruta = "cpp/persona.cpp";
     explicacion = "C++ usa cout y muestra true como 1.";
     datos = ["Nombre: Blanca", "Edad: 20", "Altura: 1.65", "Estudiante: 1"];
   }
 
   else if (lenguaje === "kotlin") {
-    ruta = "Kotlin/Persona.kt";
+    ruta = "kotlin/Persona.kt";
     explicacion = "Kotlin usa val.";
     datos = ["Nombre: Blanca", "Edad: 20", "Altura: 1.65", "Estudiante: true"];
   }
